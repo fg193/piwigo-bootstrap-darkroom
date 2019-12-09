@@ -98,3 +98,4 @@ $lang['Display number of images in album and subalbums'] = '显示相册和子�
 $lang['A mobile-ready theme based on Bootstrap 4'] = '移动设备友好的 Piwigo 主题，基于 Bootstrap 4 开发';
 $lang['Advanced'] = '高级';
 $lang['Components'] = '组件';
+$lang['Information'] = '基本信息';
