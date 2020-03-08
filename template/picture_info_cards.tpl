@@ -7,24 +7,24 @@
 {if $display_info.author and isset($INFO_AUTHOR)}
             <div id="Author" class="imageInfo">
               <dl class="row mb-0">
-                <dt class="col-sm-5">{'Author'|@translate}</dt>
-                <dd class="col-sm-7">{$INFO_AUTHOR}</dd>
+                <dt class="col-5">{'Author'|@translate}</dt>
+                <dd class="col-7">{$INFO_AUTHOR}</dd>
               </dl>
             </div>
 {/if}
 {if isset($CR_INFO_NAME) && !empty($CR_INFO_NAME)}
             <div id="Copyright" class="imageInfo">
               <dl class="row mb-0">
-                <dt class="col-sm-5">{'Copyright'|@translate}</dt>
-                <dd class="col-sm-7">{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</dd>
+                <dt class="col-5">{'Copyright'|@translate}</dt>
+                <dd class="col-7">{if isset($CR_INFO_URL)}<a href="{$CR_INFO_URL}">{$CR_INFO_NAME}</a>{else}{$CR_INFO_NAME}{/if}</dd>
               </dl>
             </div>
 {/if}
 {if $display_info.rating_score and isset($rate_summary)}
             <div id="Average" class="imageInfo">
               <dl class="row mb-0">
-                <dt class="col-sm-5">{'Rating score'|@translate}</dt>
-                <dd class="col-sm-7">
+                <dt class="col-5">{'Rating score'|@translate}</dt>
+                <dd class="col-7">
                   {if $rate_summary.count}
                     <span id="ratingScore">{$rate_summary.score}</span> <span id="ratingCount">({$rate_summary.count|@translate_dec:'%d rate':'%d rates'})</span>
                   {else}
@@ -38,8 +38,8 @@
 {if isset($rating)}
             <div id="rating" class="imageInfo">
               <dl class="row mb-0">
-                <dt class="col-sm-5" id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</dt>
-                <dd class="col-sm-7">
+                <dt class="col-5" id="updateRate">{if isset($rating.USER_RATE)}{'Update your rating'|@translate}{else}{'Rate this photo'|@translate}{/if}</dt>
+                <dd class="col-7">
                   <form action="{$rating.F_ACTION}" method="post" id="rateForm" style="margin:0;">
                     <div>
                       {foreach from=$rating.marks item=mark name=rate_loop}
@@ -84,60 +84,60 @@
 {if $display_info.created_on and isset($INFO_CREATION_DATE)}
             <div id="datecreate" class="imageInfo">
               <dl class="row mb-0">
-                <dt class="col-sm-5">{'Created on'|@translate}</dt>
-                <dd class="col-sm-7">{$INFO_CREATION_DATE}</dd>
+                <dt class="col-5">{'Created on'|@translate}</dt>
+                <dd class="col-7">{$INFO_CREATION_DATE}</dd>
               </dl>
             </div>
 {/if}
 {if $display_info.posted_on}
             <div id="datepost" class="imageInfo">
               <dl class="row mb-0">
-                <dt class="col-sm-5">{'Posted on'|@translate}</dt>
-                <dd class="col-sm-7">{$INFO_POSTED_DATE}</dd>
-              </dl>
-            </div>
-{/if}
-{if $display_info.visits}
-            <div id="visits" class="imageInfo">
-              <dl class="row mb-0">
-                <dt class="col-sm-5">{'Visits'|@translate}</dt>
-                <dd class="col-sm-7">{$INFO_VISITS}</dd>
-              </dl>
-            </div>
-{/if}
-{if $display_info.dimensions and isset($INFO_DIMENSIONS)}
-            <div id="Dimensions" class="imageInfo">
-              <dl class="row mb-0">
-                <dt class="col-sm-5">{'Dimensions'|@translate}</dt>
-                <dd class="col-sm-7">{$INFO_DIMENSIONS}</dd>
-              </dl>
-            </div>
-{/if}
-{if $display_info.file}
-            <div id="File" class="imageInfo">
-              <dl class="row mb-0">
-                <dt class="col-sm-5">{'File'|@translate}</dt>
-                <dd class="col-sm-7">{$INFO_FILE}</dd>
-              </dl>
-            </div>
-{/if}
-{if $display_info.filesize and isset($INFO_FILESIZE)}
-            <div id="Filesize" class="imageInfo">
-              <dl class="row mb-0">
-                <dt class="col-sm-5">{'Filesize'|@translate}</dt>
-                <dd class="col-sm-7">{$INFO_FILESIZE}</dd>
+                <dt class="col-5">{'Posted on'|@translate}</dt>
+                <dd class="col-7">{$INFO_POSTED_DATE}</dd>
               </dl>
             </div>
 {/if}
 {if $display_info.categories and isset($related_categories)}
             <div id="Categories" class="imageInfo">
               <dl class="row mb-0">
-                <dt class="col-sm-5">{'Albums'|@translate}</dt>
-                <dd class="col-sm-7">
+                <dt class="col-5">{'Albums'|@translate}</dt>
+                <dd class="col-7">
                 {foreach from=$related_categories item=cat name=cat_loop}
                 {if !$smarty.foreach.cat_loop.first}<br />{/if}{$cat}
                 {/foreach}
                 </dd>
+              </dl>
+            </div>
+{/if}
+{if $display_info.visits}
+            <div id="visits" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-5">{'Visits'|@translate}</dt>
+                <dd class="col-7">{$INFO_VISITS}</dd>
+              </dl>
+            </div>
+{/if}
+{if $display_info.file}
+            <div id="File" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-5">{'File'|@translate}</dt>
+                <dd class="col-7">{$INFO_FILE}</dd>
+              </dl>
+            </div>
+{/if}
+{if $display_info.dimensions and isset($INFO_DIMENSIONS)}
+            <div id="Dimensions" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-5">{'Dimensions'|@translate}</dt>
+                <dd class="col-7">{$INFO_DIMENSIONS}</dd>
+              </dl>
+            </div>
+{/if}
+{if $display_info.filesize and isset($INFO_FILESIZE)}
+            <div id="Filesize" class="imageInfo">
+              <dl class="row mb-0">
+                <dt class="col-5">{'Filesize'|@translate}</dt>
+                <dd class="col-7">{$INFO_FILESIZE}</dd>
               </dl>
             </div>
 {/if}
@@ -161,8 +161,8 @@
 {/strip}{/footer_script}
             <div id="Privacy" class="imageInfo">
               <dl class="row mb-0">
-                <dt class="col-sm-5">{'Who can see this photo?'|@translate}</dt>
-                <dd class="col-sm-7">
+                <dt class="col-5">{'Who can see this photo?'|@translate}</dt>
+                <dd class="col-7">
                   <div class="dropdown">
                     <button class="btn btn-primary btn-raised dropdown-toggle ellipsis" type="button" id="dropdownPermissions" data-toggle="dropdown" aria-expanded="true">
                       {$available_permission_levels[$current.level]}
@@ -243,33 +243,33 @@
               <div class="col-12{if $theme_config->fluid_width} col-xl-10{/if}">
                 <div class="row">
                   {if is_array($metadata.0.lines) && (array_key_exists("{$exif_fnumber}", $metadata.0.lines))}
-                  <div class="col-6 col-sm-4">
+                  <div class="col-3">
                     <span class="camera-aperture fa-2x pr-2" title="{$exif_fnumber}"></span> f/{$metadata.0.lines[{$exif_fnumber}]}
                   </div>
                   {/if}
-                  {if is_array($metadata.0.lines) && (array_key_exists("{$exif_focal_length}", $metadata.0.lines))}
-                  <div class="col-6 col-sm-4">
-                    <span class="camera-focal-length fa-2x pr-2" title="{$exif_focal_length}"></span> {$metadata.0.lines[{$exif_focal_length}]}
-                  </div>
-                  {/if}
                   {if is_array($metadata.0.lines) && (array_key_exists("{$exif_exposure_time}", $metadata.0.lines))}
-                  <div class="col-6 col-sm-4">
+                  <div class="col-3">
                     <span class="camera-shutter-speed fa-2x pr-2" title="{$exif_exposure_time}"></span> {$metadata.0.lines[{$exif_exposure_time}]}
                   </div>
                   {/if}
                   {if is_array($metadata.0.lines) && (array_key_exists("{$exif_iso}", $metadata.0.lines))}
-                  <div class="col-6 col-sm-4">
+                  <div class="col-3">
                     <span class="camera-iso fa-2x pr-2" title="{$exif_iso}"></span> {$metadata.0.lines[{$exif_iso}]}
                   </div>
                   {/if}
                   {if is_array($metadata.0.lines) && (array_key_exists("{$exif_exposure_bias}", $metadata.0.lines))}
-                  <div class="col-6 col-sm-4">
+                  <div class="col-3">
                     <span class="camera-exposure fa-2x pr-2" title="{$exif_exposure_bias}"></span> {$metadata.0.lines[{$exif_exposure_bias}]}
                   </div>
                   {/if}
                   {if is_array($metadata.0.lines) && (array_key_exists("{$exif_flash}", $metadata.0.lines))}
-                  <div class="col-6 col-sm-4">
+                  <div class="col-3">
                     <span class="camera-flash fa-2x pr-2 float-left h-100" title="{$exif_flash}"></span><div> {$metadata.0.lines[{$exif_flash}]}</div>
+                  </div>
+                  {/if}
+                  {if is_array($metadata.0.lines) && (array_key_exists("{$exif_focal_length}", $metadata.0.lines))}
+                  <div class="col-3">
+                    <span class="camera-focal-length fa-2x pr-2" title="{$exif_focal_length}"></span> {$metadata.0.lines[{$exif_focal_length}]}
                   </div>
                   {/if}
                 </div>
@@ -293,8 +293,8 @@ $('#show_exif_data').on('click', function() {
 {foreach from=$meta.lines item=value key=label}
             <div>
               <dl class="row mb-0">
-                <dt class="col-sm-6">{$label}</dt>
-                <dd class="col-sm-6">{$value}</dd>
+                <dt class="col-6">{$label}</dt>
+                <dd class="col-6">{$value}</dd>
               </dl>
             </div>
 {/foreach}
