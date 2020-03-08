@@ -1,4 +1,4 @@
-<nav class="mt-5" aria-label="Page navigation">
+<nav class="my-3" aria-label="Page navigation">
     <ul class="pagination justify-content-center">
 {if isset($navbar.URL_FIRST)}
         <li class="page-item"><a class="page-link" href="{$navbar.URL_FIRST}{if $fragment}#{$fragment}{/if}" rel="first"><i class="fas fa-fast-backward" title="{'First'|@translate}"></i></a></li>

@@ -178,6 +178,12 @@ $(document).ready(function() {
   $('#content .col-outer .card-body:has(> .card-title)').equalHeights();
 });
 {/strip}{/footer_script}
+
+{if !empty($cats_navbar)}
+    <div class="container{if $theme_config->fluid_width}-fluid{/if}">
+    {include file='navigation_bar.tpl' fragment="content"|@get_extent:'navbar' navbar=$cats_navbar}
+    </div>
+{/if}
     <!-- End of categories -->
 {/if}
 
@@ -283,20 +289,16 @@ $('.card-thumbnail').find('img[src*="pwg_representative"]').each(function() {
 });
 {/if}
 {/strip}{/footer_script}
+
+{if !empty($thumb_navbar) && !isset($loaded_plugins['rv_tscroller'])}
+    <div class="container{if $theme_config->fluid_width}-fluid{/if}">
+    {include file='navigation_bar.tpl' fragment="content"|@get_extent:'navbar' navbar=$thumb_navbar}
+    </div>
+{/if}
         <!-- End of thumbnails -->
 {/if}
     </div>
 </div>
-{if !empty($cats_navbar) || !empty($thumb_navbar)}
-<div class="container{if $theme_config->fluid_width}-fluid{/if}">
-{if !empty($cats_navbar)}
-    {include file='navigation_bar.tpl' fragment="content"|@get_extent:'navbar' navbar=$cats_navbar}
-{/if}
-{if !empty($thumb_navbar) && !isset($loaded_plugins['rv_tscroller'])}
-    {include file='navigation_bar.tpl' fragment="content"|@get_extent:'navbar' navbar=$thumb_navbar}
-{/if}
-</div>
-{/if}
 
 <div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {if !empty($PLUGIN_INDEX_CONTENT_END)}{$PLUGIN_INDEX_CONTENT_END}{/if}
