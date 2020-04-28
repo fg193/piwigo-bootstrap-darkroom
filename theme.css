@@ -109,7 +109,7 @@ body {
 
 /* Copyright container */
 .copyright {
-  padding: 30px;
+  padding: 15px 10px 25px;
 }
 
 /* Help popup */
@@ -1214,6 +1214,10 @@ ul.thumbnailCategories {
 
 #theAdditionalPage .navbar-contextual .nav-breadcrumb > a {
   padding-right: 0.5rem;
+}
+
+.Piwigo::before {
+  content: attr(class);
 }
 
 /*# sourceMappingURL=theme.css.map */
