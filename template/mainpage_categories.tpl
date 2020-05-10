@@ -23,16 +23,20 @@
           <img class="{if $smarty.cookies.view == 'list'}card-img-left{else}card-img-top{/if}" {if $derivative->is_cached()}src="{$derivative->get_url()}"{else}src="{$ROOT_URL}themes/bootstrap_darkroom/img/transparent.png" data-src="{$derivative->get_url()}"{/if} alt="{$cat.TN_ALT}" title="{$cat.NAME|@replace:'"':' '|@strip_tags:false} - {'display this album'|@translate}">
         </a>
         <div class="card-body">
-          <h5 class="card-title ellipsis {if !empty($cat.icon_ts)} recent{/if}">
-          <a href="{$cat.URL}">{$cat.NAME}</a>
-          {if !empty($cat.icon_ts)}
-            <img title="{$cat.icon_ts.TITLE}" src="{$ROOT_URL}{$themeconf.icon_dir}/recent{if $cat.icon_ts.IS_CHILD_DATE}_by_child{/if}.png" alt="(!)">
-          {/if}
-          </h5>
+          <div class="card-title {if !empty($cat.icon_ts)}recent{/if}">
+            <h5 class="d-inline">
+              <a href="{$cat.URL}">{$cat.NAME}</a>
+              {if !empty($cat.icon_ts)}
+                <img title="{$cat.icon_ts.TITLE}" src="{$ROOT_URL}{$themeconf.icon_dir}/recent{if $cat.icon_ts.IS_CHILD_DATE}_by_child{/if}.png" alt="(!)">
+              {/if}
+            </h5>
+            {if not empty($cat.DESCRIPTION)}
+              <span class="description ellipsis {if $theme_config->cat_descriptions}d-inline{/if}">
+                <a href="https://zh.wikipedia.org/wiki/{$cat.NAME}">{$cat.DESCRIPTION}</a>
+              </span>
+            {/if}
+          </div>
           <div class="card-text">
-{if not empty($cat.DESCRIPTION)}
-              <div class="description {if $theme_config->cat_descriptions} d-block{/if}">{$cat.DESCRIPTION}</div>
-{/if}
 {if isset($cat.INFO_DATES) }
               <div class="info-dates">{$cat.INFO_DATES}</div>
 {/if}
