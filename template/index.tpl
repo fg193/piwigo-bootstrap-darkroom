@@ -153,16 +153,6 @@
 {if isset($FILE_CHRONOLOGY_VIEW)}
     {include file=$FILE_CHRONOLOGY_VIEW}
 {/if}
-
-{if !empty($CONTENT_DESCRIPTION)}
-    <div id="content-description" class="py-3{if $theme_config->thumbnail_cat_desc == 'simple'} text-center{/if}">
-{if $theme_config->thumbnail_cat_desc == 'simple'}
-        <h5>{$CONTENT_DESCRIPTION}</h5>
-{else}
-        {$CONTENT_DESCRIPTION}
-{/if}
-    </div>
-{/if}
     <div id="content" class="{if $smarty.cookies.view == 'list'}content-list{else}content-grid{/if}{if empty($CONTENT_DESCRIPTION)} pt-3{/if}">
 {if !empty($CONTENT)}
     <!-- Start of content -->
